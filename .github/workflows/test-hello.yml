@@ -15,10 +15,6 @@ jobs:
         with:
           python-version: "3.10"
     
-      - name: "Installing dependencies"
-        run: python3 -m pip install -r requirements.txt
-        shell: bash
-
       - name: Checking that hello.py returns "Hello, World!"
         run: |
           diff <(echo 'Hello, World!') <(python3 src/hello.py)
