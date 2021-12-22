@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   make-testing:
-    name: Checking application
+    name: Checking hello.py
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
@@ -21,5 +21,5 @@ jobs:
 
       - name: Checking that hello.py returns "Hello, World!"
         run: |
-          diff <(echo Hello, World!) <(python3 src/hello.py)
+          diff <(echo 'Hello, World!') <(python3 src/hello.py)
         shell: bash
