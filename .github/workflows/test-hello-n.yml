@@ -1,4 +1,4 @@
-name: Testing Hello, World!
+name: Testing hello-n.py
 
 on: [push]
 
@@ -19,7 +19,7 @@ jobs:
         run: python3 -m pip install -r requirements.txt
         shell: bash
 
-      - name: Checking that hello.py returns "Hello, World!"
+      - name: Checking that hello-n.py prints "Hello, World!" n times
         run: |
-          diff <(echo Hello, World!) <(python3 src/hello.py)
+          diff <(echo Hello, World!) <(echo 1 | python3 src/hello-n.py)
         shell: bash
