@@ -241,7 +241,7 @@ In `src/hex.py`, implement the encoding above the line that says
     print(encoding)
 ```
 
-## Decoding
+## Hex decoding
 
 
 There is no particular reason to prefer hexadecimal (except that two hex-numbers is enough to encode all bytes). You could use any textual encoding, you could use any delimiter, or you could require that all the numbers had the same number of digits. They avoided the latter because numbers that start with zero are interpreted as octal in the programming language C, which was used for most programs at the time. Anyway, this is how you would encode a string of bytes into a textual representation that wouldn’t confuse old email programs.
