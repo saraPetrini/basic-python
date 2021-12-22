@@ -23,5 +23,5 @@ jobs:
           f: 1
           o: 2
           r: 1
-          EOF) <(echo foobar | python3 src/count.py)
+          EOF) <(echo foobar | python3 src/counts.py)
         shell: bash
