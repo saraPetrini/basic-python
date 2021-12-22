@@ -102,30 +102,54 @@ Write a program to construct the following pattern:
 
 (there are no spaces at the end of the lines, but there are between the `'*'`).
 
-Create a new file for it, `src/pattern.py`. On GitHub, there is a test waiting for the new python program.
+Create a new file for it, `src/pattern.py`. On GitHub, there is a test waiting for the new Python program.
 
 
 
 ## Lists
 
-Consider the list
+Consider a list such as this:
 
 ```python
 x = [1, 2, 3, 4, 5, 6]
 ```
 
+The following exercises involve manipulation of these. In the file `src/lists.py` I have written some template code that reads a list of space-separated integers
+
+```
+1 2 3
+4 5
+6
+```
+
+from standard input and you should modify the file with your solutions to the problems below. While working on the exercises, however, it might be easier to just define a list directly in Python, as above.
+
+
+
 ### Exercise
 
-Write a loop over `x` that computes the sum of the numbers in `x`. Then write code to compute the mean of the numbers in `x`.
+Write a loop over `x` that computes the sum of the numbers in `x`. Then write code to compute the mean of the numbers in `x`. In `src/lists.py`, compute the mean of `x` above the line that reads
+
+```python
+    print(mean)
+```
 
 ### Exercise
 
-Write a loop over the list `x` that creates another list, `y`, that contains the elements in `x` but multiplied by 3.
+Write a loop over the list `x` that creates another list, `times_three`, that contains the elements in `x` but multiplied by 3. In `src/lists.py`, compute the `times_three` list above the line that reads
+
+```python
+    print_list(times_three)
+```
 
 ### Exercise
 
-Write a loop that creates a list, `y`, that contains all even numbers in `x` (and only the even numbers). You can check if a number is even by taking the integer division remainder with two and checking if it is zero: `n % 2 == 0`.
+Write a loop that creates a list, `even`, that contains all even numbers in `x` (and only the even numbers). You can check if a number is even by taking the integer division remainder with two and checking if it is zero: `n % 2 == 0`. In `src/lists.py`, compute the `even` list above the line that reads
 
+
+```python
+    print_list(even)
+```
 
 
 ## Counting
