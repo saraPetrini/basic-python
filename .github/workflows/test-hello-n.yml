@@ -23,11 +23,12 @@ jobs:
           Hello, World!
           EOF
 
-          cat <(cat <<EOF
+          diff <(cat <<EOF
           How many times should I loop? Hello, World!
           foo bar
           baz
-          EOF)
+          EOF) <(echo foo)
+
         shell: bash
 
 #          diff <(cat <<EOF
