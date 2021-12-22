@@ -51,13 +51,14 @@ When you are done, you can check if the test script on GitHub agrees by committi
 input('Do you want to stop? ')
 ```
 
-
-
 Write a `while`-loop that asks the use if you should stop in each iteration, and make it stop if the user answers `'yes'`. Remember that you can tell Python to stop iterating with the keyword `break`.
 
+When you are done, you can check the test on your pull request (but mind you that it is only considering the program correct if it is getting *exactly* the same output, including spaces and newlines).
 
 
 **Exercise:** Write a loop that runs through the numbers 1 to 10 (not 0 to 9!), and in iteration one it prints `1`, in iteration two it prints `1 2`, in iteration three it prints `1 2 3`, and so forth.
+
+
 
 **Exercises:** Write a program to construct the following pattern, using a nested for loop.
 
