@@ -42,14 +42,20 @@ n = 42
 
 Now write a loop that prints "Hello, World!" `n` times. You choose if you prefer a `for`- or a `while`-loop.
 
+When you are done, you can check if the test script on GitHub agrees by committing and pushing, then checking the test on your `Feedback` pull request.
 
-**Exercise:** Let us do a `while`-loop that continues until you tell it that you want to stop. You can use the function `input()` to get user input. It lets the user write an answer on the terminal prompt, and once he or she hits enter, Python get the string. So you can ask the user if you should stop using
+
+**Exercise:** Let us do a `while`-loop that continues to ask us `"Do you want to stop?"` until you tell it that you want to stop. You can use the function `input()` to get user input. It lets the user write an answer on the terminal prompt, and once he or she hits enter, Python get the string. So you can ask the user if you should stop using
 
 ```python
 input('Do you want to stop? ')
 ```
 
+
+
 Write a `while`-loop that asks the use if you should stop in each iteration, and make it stop if the user answers `'yes'`. Remember that you can tell Python to stop iterating with the keyword `break`.
+
+
 
 **Exercise:** Write a loop that runs through the numbers 1 to 10 (not 0 to 9!), and in iteration one it prints `1`, in iteration two it prints `1 2`, in iteration three it prints `1 2 3`, and so forth.
 
