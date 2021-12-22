@@ -86,19 +86,24 @@ with no spaces after the last letter.
 
 ### Exercise
 
-Write a program to construct the following pattern, using a nested for loop.
+Write a program to construct the following pattern:
 
 ```
-* 
-* * 
-* * * 
-* * * * 
-* * * * * 
-* * * * 
-* * * 
-* * 
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
 *
 ```
+
+(there are no spaces at the end of the lines, but there are between the `'*'`).
+
+Create a new file for it, `src/pattern.py`. On GitHub, there is a test waiting for the new python program.
+
 
 
 ## Lists
