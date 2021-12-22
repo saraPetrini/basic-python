@@ -21,11 +21,11 @@ jobs:
 
       - name: Checking that hello-n.py prints "Hello, World!" n times
         run: |
-diff <(cat <<EOF
+          diff <(cat <<EOF
 How many times should I loop? Hello, World!
 EOF) <(echo 1 | python3 src/hello-n.py)
 
-diff <(cat <<EOF
+          diff <(cat <<EOF
 How many times should I loop? Hello, World!
 Hello, World!
 Hello, World!
