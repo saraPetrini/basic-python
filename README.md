@@ -184,6 +184,9 @@ if c not in table:
 
 If you insert `c` here, you avoid the problem. Go count the characters in a string.
 
+In `src/count.py` there is code for reading a string from standard input and writing the character count to standard output--it just needs your code to get working!
+
+
 ## Password validation
 
 Write program to check the validity of password input by users.
