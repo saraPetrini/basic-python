@@ -15,28 +15,33 @@ jobs:
         with:
           python-version: "3.10"
     
-      - name: Checking that hello-n.py prints "Hello, World!" n times
+      - name: Checking n == 0
         run: |
-          cat <<EOF
-          How many times should I loop? Hello, World!
-          Hello, World!
-          Hello, World!
-          EOF
-
           diff <(cat <<EOF
-          How many times should I loop? Hello, World!
-          foo bar
-          baz
-          EOF) <(echo foo)
-
+          How many times should I loop? 
+          EOF) <(echo 0 | python3 src/hello-n.py)
         shell: bash
 
-#          diff <(cat <<EOF
-#          How many times should I loop? Hello, World!
-#          EOF) <(echo 1 | python3 src/hello-n.py)
-#
-#          diff <(cat <<EOF
-#          How many times should I loop? Hello, World!
-#          Hello, World!
-#          Hello, World!
-#          EOF) <(echo 3 | python3 src/hello-n.py)
+      - name: Checking n == 1
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          EOF) <(echo 1 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking n == 2
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          Hello, World!
+          EOF) <(echo 2 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking n == 3
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          Hello, World!
+          Hello, World!
+          EOF) <(echo 5 | python3 src/hello-n.py)
+        shell: bash
