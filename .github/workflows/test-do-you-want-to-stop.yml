@@ -24,5 +24,6 @@ jobs:
           EOF) <(cat << EOF
           no
           no
-          yes) | python3 src/do-you-want-to-stop.py)
+          yes
+          EOF) | python3 src/do-you-want-to-stop.py)
         shell: bash
