@@ -1,3 +1,2 @@
 
-for i in range(10):
-    print(i + 1)
+# Print the numbers described in the exercise
