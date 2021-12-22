@@ -191,11 +191,14 @@ In `src/count.py` there is code for reading a string from standard input and wri
 
 Write program to check the validity of password input by users.
 
-* At least 1 letter between ~[a-z]~ and 1 letter between ~[A-Z]~. You can use the methods `x.islower()` and `x.isupper()` for this.
-* At least 1 number between ~[0-9]~. You can use the method `x.isnumeric()` for this.
-* At least 1 character from ~[$#@]~.
+* At least 1 letter between `[a-z]` and 1 letter between `[A-Z]`. You can use the methods `a.islower()` and `a.isupper()` to check if the letter `a` is one of these.
+* At least 1 number between `[0-9]`. You can use the method `a.isnumeric()` for this.
+* At least 1 character from `[$#@]`; (`a in "$#@"` will test if `a` is one of these).
 * Minimum length 6 characters.
 * Maximum length 16 characters.
+
+
+
 
 ## Hex encoding
 
