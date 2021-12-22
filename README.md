@@ -34,10 +34,12 @@ When you have done so, you can commit the changes to GitHub, push them, and chec
 
 ## Loops
 
-**Exercise:** Assume you have a number `n` (in `src/hello-n.py` you get it from the user running the program).
+### Exercise
+
+Assume you have a number `n` (in `src/hello-n.py` you get it from the user running the program).
 
 ```python
-n = 42
+n = int(input("How many times should I loop? "))
 ```
 
 Now write a loop that prints "Hello, World!" `n` times. You choose if you prefer a `for`- or a `while`-loop.
@@ -45,7 +47,9 @@ Now write a loop that prints "Hello, World!" `n` times. You choose if you prefer
 When you are done, you can check if the test script on GitHub agrees by committing and pushing, then checking the test on your `Feedback` pull request.
 
 
-**Exercise:** Let us do a `while`-loop that continues to ask us `"Do you want to stop?"` until you tell it that you want to stop. You can use the function `input()` to get user input. It lets the user write an answer on the terminal prompt, and once he or she hits enter, Python get the string. So you can ask the user if you should stop using
+### Exercise
+
+Let us do a `while`-loop that continues to ask us `"Do you want to stop?"` until you tell it that you want to stop. You can use the function `input()` to get user input. It lets the user write an answer on the terminal prompt, and once he or she hits enter, Python get the string. So you can ask the user if you should stop using
 
 ```python
 input('Do you want to stop? ')
@@ -55,12 +59,34 @@ Write a `while`-loop that asks the use if you should stop in each iteration, and
 
 When you are done, you can check the test on your pull request (but mind you that it is only considering the program correct if it is getting *exactly* the same output, including spaces and newlines).
 
+### Exercise
 
-**Exercise:** Write a loop that runs through the numbers 1 to 10 (not 0 to 9!), and in iteration one it prints `1`, in iteration two it prints `1 2`, in iteration three it prints `1 2 3`, and so forth.
+In `src/print-1-10.py`, write a loop that runs through the numbers 1 to 10 (not 0 to 9!), and prints the number.
 
 
+### Exercise
 
-**Exercises:** Write a program to construct the following pattern, using a nested for loop.
+Now write a new version, put it in `src/print-1-10-growing.py`, where we add a little more to each line; we will add the numbers from 1 up to and including the number we printed before. In iteration one the program should print `1`, in iteration two it should print `1 2`, in iteration three it should print `1 2 3`, and so forth. The final output should look like this,
+
+```
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+```
+
+with no spaces after the last letter.
+
+
+### Exercise
+
+Write a program to construct the following pattern, using a nested for loop.
 
 ```
 * 
@@ -83,11 +109,17 @@ Consider the list
 x = [1, 2, 3, 4, 5, 6]
 ```
 
-**Exercise:** Write a loop over `x` that computes the sum of the numbers in `x`. Then write code to compute the mean of the numbers in `x`.
+### Exercise
 
-**Exercise:** Write a loop over the list `x` that creates another list, `y`, that contains the elements in `x` but multiplied by 3.
+Write a loop over `x` that computes the sum of the numbers in `x`. Then write code to compute the mean of the numbers in `x`.
 
-**Exercise:** Write a loop that creates a list, `y`, that contains all even numbers in `x` (and only the even numbers). You can check if a number is even by taking the integer division remainder with two and checking if it is zero: `n % 2 == 0`.
+### Exercise
+
+Write a loop over the list `x` that creates another list, `y`, that contains the elements in `x` but multiplied by 3.
+
+### Exercise
+
+Write a loop that creates a list, `y`, that contains all even numbers in `x` (and only the even numbers). You can check if a number is even by taking the integer division remainder with two and checking if it is zero: `n % 2 == 0`.
 
 
 
@@ -99,7 +131,9 @@ We use dictionaries for tables, and you can make an empty dictionary like this:
 table = {}
 ```
 
-**Exercise:** Write code that counts how often a character is in a string. You can iterate through a string, character by character, using
+### Exercise
+
+Write code that counts how often a character is in a string. You can iterate through a string, character by character, using
 
 ```python
 for c in string:
@@ -151,7 +185,7 @@ gives you `a` back. So to translate a string of bytes into something human reada
 
 Well, not that fast! If you see the string `123` do you have three, two, or one number? `1`, `2`, and `3`? or `12` and `3` ? or `1` and `23`? or `123`? For the trick to work, we need some way to delimit the characters. What people did (and might still do) is to translate the numbers into hexadecimal, which is base-16 numbers. You can encode more numbers in less space that way, and you can recognise when a number starts because it will always start with `0x`. You can get the hexadecimal string from a number using the function `hex()`.
 
-**Exercise:**
+### Exercise
 
 Take a string such as
 
@@ -183,7 +217,9 @@ int(n, base = 16)
 
 gives you the underlying number, that you can then give to `chr()`.
 
-**Exercise:** Write code that takes a string of hexadecimal strings and decode it into the original string.
+### Exercise
+
+Write code that takes a string of hexadecimal strings and decode it into the original string.
 
 There are other (and smarter) encodings. Now that we have mostly moved to unicode for text representations, there are many options for simple text, and for binary files there has always been many. They are optimised for different things and for different applications, so you run into them every day, without knowing them. One day, perhaps, you will need to write your own encoders and decoders—it is quite likely if you ever need to develop your own file format—and now you have seen a very simple solution.
 
