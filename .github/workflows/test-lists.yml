@@ -1,10 +1,10 @@
-name: Testing Pattern
+name: Testing Lists
 
 on: [push]
 
 jobs:
   make-testing:
-    name: Checking pattern.py
+    name: Checking lists.py
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
@@ -15,17 +15,17 @@ jobs:
         with:
           python-version: "3.10"
     
-      - name: Running pattern.py mean
+      - name: Running lists.py mean
         run: |
           diff <(echo 3.0) <(echo 1 2 3 4 5 | python3 src/lists.py mean)
         shell: bash
 
-      - name: Running pattern.py times
+      - name: Running lists.py times
         run: |
           diff <(echo 3 6 9 12 15) <(echo 1 2 3 4 5 | python3 src/lists.py times)
         shell: bash
 
-      - name: Running pattern.py even
+      - name: Running lists.py even
         run: |
           diff <(echo 2 4) <(echo 1 2 3 4 5 | python3 src/lists.py even)
         shell: bash

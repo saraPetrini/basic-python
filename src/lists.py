@@ -42,7 +42,7 @@ if len(sys.argv) < 2:
 match sys.argv[1]:
     case "mean":
         # put your solution to the first exercise here
-        mean = print(sum(x) / len(x))
+        mean = sum(x) / len(x)
         print(mean)
 
     case "times":
