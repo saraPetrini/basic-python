@@ -21,7 +21,7 @@ jobs:
           Do you want to stop? no
           Do you want to stop? no
           Do you want to stop? yes
-          EOF) <(cat << EOF
+          EOF) <( (cat << EOF
           no
           no
           yes
