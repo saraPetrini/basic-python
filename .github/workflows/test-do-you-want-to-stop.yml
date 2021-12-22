@@ -17,13 +17,7 @@ jobs:
     
       - name: Checking do-you-want-to-stop.py
         run: |
-          diff <(cat <<EOF
-          Do you want to stop? no
-          Do you want to stop? no
-          Do you want to stop? yes
-          EOF) <( (cat << EOF
-          no
-          no
-          yes
-          EOF) | python3 src/do-you-want-to-stop.py)
+          diff \
+          <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
+          <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
         shell: bash
