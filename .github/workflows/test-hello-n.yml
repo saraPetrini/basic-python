@@ -17,7 +17,7 @@ jobs:
     
       - name: Checking n == 0
         run: |
-          diff <(echo "How many times should I loop? ") \
+          diff <(echo -n "How many times should I loop? ") \
                <(echo 0 | python3 src/hello-n.py)
         shell: bash
 
