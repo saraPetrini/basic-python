@@ -197,7 +197,7 @@ Write program to check the validity of password input by users.
 * Minimum length 6 characters.
 * Maximum length 16 characters.
 
-
+The program in `src/password.py` is set up and ready to go, but you need to implement the password checks for it.
 
 
 ## Hex encoding
@@ -220,6 +220,7 @@ gives you `a` back. So to translate a string of bytes into something human reada
 
 Well, not that fast! If you see the string `123` do you have three, two, or one number? `1`, `2`, and `3`? or `12` and `3` ? or `1` and `23`? or `123`? For the trick to work, we need some way to delimit the characters. What people did (and might still do) is to translate the numbers into hexadecimal, which is base-16 numbers. You can encode more numbers in less space that way, and you can recognise when a number starts because it will always start with `0x`. You can get the hexadecimal string from a number using the function `hex()`.
 
+
 ### Exercise
 
 Take a string such as
@@ -234,14 +235,23 @@ and run through each character, get its number, and put the hex encoding into a 
 z = ''.join(y)
 ```
 
+In `src/hex.py`, implement the encoding above the line that says
+
+```python
+    print(encoding)
+```
+
+## Decoding
+
+
 There is no particular reason to prefer hexadecimal (except that two hex-numbers is enough to encode all bytes). You could use any textual encoding, you could use any delimiter, or you could require that all the numbers had the same number of digits. They avoided the latter because numbers that start with zero are interpreted as octal in the programming language C, which was used for most programs at the time. Anyway, this is how you would encode a string of bytes into a textual representation that wouldn’t confuse old email programs.
 
 However, encoding is not the full story. If I send you an encoded file, you probably want to decode it again. You need the real string of bytes, and that is not what I am sending you. So, you need to go through the string and translate the numbers back—first you need to get an `int` for each hexadecimal number, and then you need to translate that number into the original character (the last step, we already know that we can do with the `chr()` function).
 
-You can split the string of hexadecimal numbers, `z`` using 
+You can split the string of hexadecimal numbers, `x` using 
 
 ```python
-z.split('0x')
+x.split('0x')
 ```
 
 It gets rid of the `0x` strings and give you a list of the strings between them. Throw away the first element, it is an empty string and doesn’t represent a number. You can run through this list and translate the strings into integers. You need to interpret the strings as hexadecimal (and not for example decimal), so call the function `int` with an extra argument, `base = 16`. If `n` is a string in hexadecimal, then 
@@ -254,7 +264,20 @@ gives you the underlying number, that you can then give to `chr()`.
 
 ### Exercise
 
-Write code that takes a string of hexadecimal strings and decode it into the original string.
+Write code that takes a string of hexadecimal strings and decode it into the original string. Add it to `src/hex.py` above the line that says
+
+```python
+    print(decoding)
+```
+
+Now you have both an encoding and a decoding, and you can check if it works by going full circle. In the `bash` shell, this
+
+```bash
+> python3 src/hex.py decode $(python3 src/hex.py encode foobar)
+```
+
+should print `foobar`. The command `$(python3 src/hex.py encode foobar)` encodes `foobar` and gives it as a string argument to the second argument that decodes it again.
+
 
 There are other (and smarter) encodings. Now that we have mostly moved to unicode for text representations, there are many options for simple text, and for binary files there has always been many. They are optimised for different things and for different applications, so you run into them every day, without knowing them. One day, perhaps, you will need to write your own encoders and decoders—it is quite likely if you ever need to develop your own file format—and now you have seen a very simple solution.
 
