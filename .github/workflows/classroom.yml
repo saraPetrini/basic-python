@@ -22,14 +22,6 @@ jobs:
         run: python3 -m pip install -r requirements.txt
         shell: bash
 
-      - name: Checking with doctest
-        run: python3 -m doctest src/*.py
-        shell: bash
-
-      - name: Checking with pytest
-        run: if src/test_*.py 2> /dev/null; then python3 -m pytest src; fi
-        shell: bash
-
       - name: Checking that hello.py returns "Hello, World!"
         run: |
           diff <(echo 'Hello, World!') <(python3 src/hello.py)
