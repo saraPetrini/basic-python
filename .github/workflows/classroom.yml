@@ -57,15 +57,11 @@ jobs:
           EOF) <(echo 3 | python3 src/hello-n.py)
         shell: bash
 
-      - name: Running count.py
+      - name: Checking do-you-want-to-stop.py
         run: |
-          diff <(cat <<EOF
-          a: 1
-          b: 1
-          f: 1
-          o: 2
-          r: 1
-          EOF) <(echo foobar | python3 src/counts.py)
+          diff \
+          <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
+          <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
         shell: bash
 
       - name: Running print-1-10.py
@@ -90,11 +86,19 @@ jobs:
           EOF) <(python3 src/print-1-10-growing.py)
         shell: bash
 
-      - name: Checking do-you-want-to-stop.py
+      - name: Running pattern.py
         run: |
-          diff \
-          <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
-          <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
+          diff <(cat <<EOF
+          *
+          * *
+          * * *
+          * * * *
+          * * * * *
+          * * * *
+          * * *
+          * *
+          *
+          EOF) <(python3 src/pattern.py)
         shell: bash
 
       - name: Running lists.py mean
@@ -112,19 +116,15 @@ jobs:
           diff <(echo 2 4) <(echo 1 2 3 4 5 | python3 src/lists.py even)
         shell: bash
 
-      - name: Running pattern.py
+      - name: Running count.py
         run: |
           diff <(cat <<EOF
-          *
-          * *
-          * * *
-          * * * *
-          * * * * *
-          * * * *
-          * * *
-          * *
-          *
-          EOF) <(python3 src/pattern.py)
+          a: 1
+          b: 1
+          f: 1
+          o: 2
+          r: 1
+          EOF) <(echo foobar | python3 src/counts.py)
         shell: bash
 
       - name: Running password "foobar"
