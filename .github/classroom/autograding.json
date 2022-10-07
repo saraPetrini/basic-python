@@ -15,7 +15,17 @@
             "setup": "",
             "run": "echo 0 | python3 src/hello-n.py",
             "input": "",
-            "output": "How many times should I loop? ",
+            "output": "How many times should I loop? x",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking hello for n == 1",
+            "setup": "",
+            "run": "echo 1 | python3 src/hello-n.py",
+            "input": "",
+            "output": "How many times should I loop? Hello, World!",
             "comparison": "included",
             "timeout": 10,
             "points": 1
