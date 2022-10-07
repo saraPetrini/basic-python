@@ -11,13 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Checking do-you-want-to-stop.py
-          diff \
-          <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
-          <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
-        shell: bash
-
-      - run: |
           echo Running print-1-10.py
           diff <(for i in {1..10}; do echo $i; done) \
                <(python3 src/print-1-10.py)
