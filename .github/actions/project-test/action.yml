@@ -11,11 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Checking that hello.py returns "Hello, World!"
-          diff <(echo 'Hello, World!') <(python3 src/hello.py)
-        shell: bash
-
-      - run: |
           echo Checking hello for n == 0
           diff <(echo -n "How many times should I loop? ") \
                <(echo 0 | python3 src/hello-n.py)

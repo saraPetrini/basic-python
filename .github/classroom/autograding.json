@@ -9,6 +9,16 @@
             "comparison": "included",
             "timeout": 10,
             "points": 1
+        },
+        {
+            "name": "Checking hello for n == 0",
+            "setup": "",
+            "run": "echo 0 | python3 src/hello-n.py",
+            "input": "",
+            "output": "How many times should I loop? ",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 1
         }
     ]
 }
