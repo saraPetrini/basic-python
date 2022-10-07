@@ -3,34 +3,34 @@ description: Run project specific tests
 runs:
   using: composite
   steps:
-      - name: Checking that hello.py returns "Hello, World!"
-        run: |
+      - run: |
+          echo \u001b[32mChecking that hello.py returns "Hello, World!"
           diff <(echo 'Hello, World!') <(python3 src/hello.py)
         shell: bash
 
-      - name: Checking hello for n == 0
-        run: |
+      - run: |
+          echo Checking hello for n == 0
           diff <(echo -n "How many times should I loop? ") \
                <(echo 0 | python3 src/hello-n.py)
         shell: bash
 
-      - name: Checking hello for n == 1
-        run: |
+      - run: |
+          echo Checking hello for n == 1
           diff <(cat <<EOF
           How many times should I loop? Hello, World!
           EOF) <(echo 1 | python3 src/hello-n.py)
         shell: bash
 
-      - name: Checking n == 2
-        run: |
+      - run: |
+          echo Checking n == 2
           diff <(cat <<EOF
           How many times should I loop? Hello, World!
           Hello, World!
           EOF) <(echo 2 | python3 src/hello-n.py)
         shell: bash
 
-      - name: Checking hello for n == 3
-        run: |
+      - run: |
+          echo Checking hello for n == 3
           diff <(cat <<EOF
           How many times should I loop? Hello, World!
           Hello, World!
@@ -38,21 +38,21 @@ runs:
           EOF) <(echo 3 | python3 src/hello-n.py)
         shell: bash
 
-      - name: Checking do-you-want-to-stop.py
-        run: |
+      - run: |
+          echo Checking do-you-want-to-stop.py
           diff \
           <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
           <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
         shell: bash
 
-      - name: Running print-1-10.py
-        run: |
+      - run: |
+          echo Running print-1-10.py
           diff <(for i in {1..10}; do echo $i; done) \
                <(python3 src/print-1-10.py)
         shell: bash
 
-      - name: Running print-1-10-growing.py
-        run: |
+      - run: |
+          echo Running print-1-10-growing.py
           diff <(cat <<EOF
           1
           1 2
@@ -67,8 +67,8 @@ runs:
           EOF) <(python3 src/print-1-10-growing.py)
         shell: bash
 
-      - name: Running pattern.py
-        run: |
+      - run: |
+          echo Running pattern.py
           diff <(cat <<EOF
           *
           * *
@@ -82,23 +82,23 @@ runs:
           EOF) <(python3 src/pattern.py)
         shell: bash
 
-      - name: Running lists.py mean
-        run: |
+      - run: |
+          echo Running lists.py mean
           diff <(echo 3.0) <(echo 1 2 3 4 5 | python3 src/lists.py mean)
         shell: bash
 
-      - name: Running lists.py times
-        run: |
+      - run: |
+          echo Running lists.py times
           diff <(echo 3 6 9 12 15) <(echo 1 2 3 4 5 | python3 src/lists.py times)
         shell: bash
 
-      - name: Running lists.py even
-        run: |
+      - run: |
+          echo Running lists.py even
           diff <(echo 2 4) <(echo 1 2 3 4 5 | python3 src/lists.py even)
         shell: bash
 
-      - name: Running count.py
-        run: |
+      - run: |
+          echo Running count.py
           diff <(cat <<EOF
           a: 1
           b: 1
@@ -108,23 +108,23 @@ runs:
           EOF) <(echo foobar | python3 src/counts.py)
         shell: bash
 
-      - name: Running password "foobar"
-        run: |
+      - run: |
+          echo Running password "foobar"
           [ `echo False` == `python3 src/password.py foobar` ]
         shell: bash
         
-      - name: Running password "Foob@r1"
-        run: |
+      - run: |
+          echo Running password "Foob@r1"
           [ `echo True` == `python3 src/password.py Foob@r1` ]
         shell: bash
 
-      - name: Running hex encoding of "foobar"
-        run: |
+      - run: |
+          echo Running hex encoding of "foobar"
           [ `echo 0x660x6f0x6f0x620x610x72` == `python3 src/hex.py encode foobar` ]
         shell: bash
         
-      - name: Running hex decoding of "0x660x6f0x6f0x620x610x72"
-        run: |
+      - run: |
+          echo Running hex decoding of "0x660x6f0x6f0x620x610x72"
           [ `echo foobar` == `python3 src/hex.py decode 0x660x6f0x6f0x620x610x72` ]
         shell: bash
   
