@@ -11,36 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Checking hello for n == 0
-          diff <(echo -n "How many times should I loop? ") \
-               <(echo 0 | python3 src/hello-n.py)
-        shell: bash
-
-      - run: |
-          echo Checking hello for n == 1
-          diff <(cat <<EOF
-          How many times should I loop? Hello, World!
-          EOF) <(echo 1 | python3 src/hello-n.py)
-        shell: bash
-
-      - run: |
-          echo Checking n == 2
-          diff <(cat <<EOF
-          How many times should I loop? Hello, World!
-          Hello, World!
-          EOF) <(echo 2 | python3 src/hello-n.py)
-        shell: bash
-
-      - run: |
-          echo Checking hello for n == 3
-          diff <(cat <<EOF
-          How many times should I loop? Hello, World!
-          Hello, World!
-          Hello, World!
-          EOF) <(echo 3 | python3 src/hello-n.py)
-        shell: bash
-
-      - run: |
           echo Checking do-you-want-to-stop.py
           diff \
           <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \

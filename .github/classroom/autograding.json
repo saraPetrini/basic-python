@@ -33,9 +33,19 @@
         {
             "name": "Checking hello for n == 2",
             "setup": "",
-            "run": "echo 1 | python3 src/hello-n.py",
+            "run": "echo 2 | python3 src/hello-n.py",
             "input": "",
             "output": "How many times should I loop? Hello, World!\nHello, World!",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Checking do-you-want-to-stop.py",
+            "setup": "",
+            "run": "printf 'no\nno\nyes\n' | python3 src/do-you-want-to-stop.py; echo",
+            "input": "",
+            "output": "Do you want to stop? Do you want to stop? Do you want to stop? ",
             "comparison": "included",
             "timeout": 10,
             "points": 1
