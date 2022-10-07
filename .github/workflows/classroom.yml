@@ -27,7 +27,7 @@ jobs:
         id: proj_act_glob
         with:
           files: |
-            ./github/actions/project-test*/action.yml
+            ./github/actions/*-test/action.yml
 
       - name: Show all matching files
         run: |
