@@ -7,6 +7,9 @@ description: Run project specific tests
 runs:
   using: composite
   steps:
+      - name: Run autograding
+        uses: education/autograding@v1
+
       - run: |
           echo Checking that hello.py returns "Hello, World!"
           diff <(echo 'Hello, World!') <(python3 src/hello.py)
