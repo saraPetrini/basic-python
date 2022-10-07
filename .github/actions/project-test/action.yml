@@ -1,0 +1,130 @@
+name: Project specific tests
+description: Run project specific tests
+runs:
+  using: composite
+  steps:
+      - name: Checking that hello.py returns "Hello, World!"
+        run: |
+          diff <(echo 'Hello, World!') <(python3 src/hello.py)
+        shell: bash
+
+      - name: Checking hello for n == 0
+        run: |
+          diff <(echo -n "How many times should I loop? ") \
+               <(echo 0 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking hello for n == 1
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          EOF) <(echo 1 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking n == 2
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          Hello, World!
+          EOF) <(echo 2 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking hello for n == 3
+        run: |
+          diff <(cat <<EOF
+          How many times should I loop? Hello, World!
+          Hello, World!
+          Hello, World!
+          EOF) <(echo 3 | python3 src/hello-n.py)
+        shell: bash
+
+      - name: Checking do-you-want-to-stop.py
+        run: |
+          diff \
+          <(echo -n "Do you want to stop? Do you want to stop? Do you want to stop? "; echo) \
+          <(printf "no\nno\nyes\n" | python3 src/do-you-want-to-stop.py; echo)
+        shell: bash
+
+      - name: Running print-1-10.py
+        run: |
+          diff <(for i in {1..10}; do echo $i; done) \
+               <(python3 src/print-1-10.py)
+        shell: bash
+
+      - name: Running print-1-10-growing.py
+        run: |
+          diff <(cat <<EOF
+          1
+          1 2
+          1 2 3
+          1 2 3 4
+          1 2 3 4 5
+          1 2 3 4 5 6
+          1 2 3 4 5 6 7
+          1 2 3 4 5 6 7 8
+          1 2 3 4 5 6 7 8 9
+          1 2 3 4 5 6 7 8 9 10
+          EOF) <(python3 src/print-1-10-growing.py)
+        shell: bash
+
+      - name: Running pattern.py
+        run: |
+          diff <(cat <<EOF
+          *
+          * *
+          * * *
+          * * * *
+          * * * * *
+          * * * *
+          * * *
+          * *
+          *
+          EOF) <(python3 src/pattern.py)
+        shell: bash
+
+      - name: Running lists.py mean
+        run: |
+          diff <(echo 3.0) <(echo 1 2 3 4 5 | python3 src/lists.py mean)
+        shell: bash
+
+      - name: Running lists.py times
+        run: |
+          diff <(echo 3 6 9 12 15) <(echo 1 2 3 4 5 | python3 src/lists.py times)
+        shell: bash
+
+      - name: Running lists.py even
+        run: |
+          diff <(echo 2 4) <(echo 1 2 3 4 5 | python3 src/lists.py even)
+        shell: bash
+
+      - name: Running count.py
+        run: |
+          diff <(cat <<EOF
+          a: 1
+          b: 1
+          f: 1
+          o: 2
+          r: 1
+          EOF) <(echo foobar | python3 src/counts.py)
+        shell: bash
+
+      - name: Running password "foobar"
+        run: |
+          [ `echo False` == `python3 src/password.py foobar` ]
+        shell: bash
+        
+      - name: Running password "Foob@r1"
+        run: |
+          [ `echo True` == `python3 src/password.py Foob@r1` ]
+        shell: bash
+
+      - name: Running hex encoding of "foobar"
+        run: |
+          [ `echo 0x660x6f0x6f0x620x610x72` == `python3 src/hex.py encode foobar` ]
+        shell: bash
+        
+      - name: Running hex decoding of "0x660x6f0x6f0x620x610x72"
+        run: |
+          [ `echo foobar` == `python3 src/hex.py decode 0x660x6f0x6f0x620x610x72` ]
+        shell: bash
+  
