@@ -1,10 +1,20 @@
 name: Project specific tests
 description: Run project specific tests
-runs:
-  using: composite
-  steps:
+jobs:
+  hello:
+    name: Hello, World!
+    runs:
+      using: composite
+      steps:
+        - run: |
+            echo Checking that hello.py returns "Hello, World!"
+            diff <(echo 'Hello, World!') <(python3 src/hello.py)
+          shell: bash
+  rest:
+    using: composite
+    steps:
       - run: |
-          echo \u001b[32mChecking that hello.py returns "Hello, World!"
+          echo Checking that hello.py returns "Hello, World!"
           diff <(echo 'Hello, World!') <(python3 src/hello.py)
         shell: bash
 
