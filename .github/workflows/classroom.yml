@@ -22,6 +22,17 @@ jobs:
         run: python3 -m pip install -r requirements.txt
         shell: bash
 
+      - name: Glob match
+        uses: tj-actions/glob@v14
+        id: proj_act_glob
+        with:
+          files: |
+            ./github/actions/project-test*/action.yml
+
+      - name: Show all matching files
+        run: |
+          echo "${{ steps.proj_act_glob.outputs.paths }}"
+
       - name: Check if there are project-specific tests
         id: proj_files
         uses: andstor/file-existence-action@v1
