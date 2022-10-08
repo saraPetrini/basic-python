@@ -59,6 +59,16 @@
             "comparison": "exact",
             "timeout": 10,
             "points": 1
+        },
+        {
+            "name": "Running print-1-10-growing.py",
+            "setup": "python3 src/print-1-10-growing.py > print-1-10-growing.txt",
+            "run": "diff print-1-10-growing.txt .test/expected/print-1-10-growing.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
         }
     ]
 }

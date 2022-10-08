@@ -11,12 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Running print-1-10.py
-          diff <(for i in {1..10}; do echo $i; done) \
-               <(python3 src/print-1-10.py)
-        shell: bash
-
-      - run: |
           echo Running print-1-10-growing.py
           diff <(cat <<EOF
           1
