@@ -11,22 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Running print-1-10-growing.py
-          diff <(cat <<EOF
-          1
-          1 2
-          1 2 3
-          1 2 3 4
-          1 2 3 4 5
-          1 2 3 4 5 6
-          1 2 3 4 5 6 7
-          1 2 3 4 5 6 7 8
-          1 2 3 4 5 6 7 8 9
-          1 2 3 4 5 6 7 8 9 10
-          EOF) <(python3 src/print-1-10-growing.py)
-        shell: bash
-
-      - run: |
           echo Running pattern.py
           diff <(cat <<EOF
           *
