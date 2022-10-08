@@ -53,7 +53,7 @@
         {
             "name": "Running print-1-10.py",
             "setup": "",
-            "run": "python3 src/do-you-want-to-stop.py; echo",
+            "run": "python3 src/print-1-10.py",
             "input": "",
             "output": "1\n2\n\n3\n4\n5\n6\n7\n8\n9\n10",
             "comparison": "exact",
