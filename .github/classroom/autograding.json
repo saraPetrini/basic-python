@@ -13,8 +13,8 @@
         {
             "name": "Checking hello for n == 0",
             "setup": "",
-            "run": "echo 0 | python3 src/hello-n.py",
-            "input": "",
+            "run": "python3 src/hello-n.py",
+            "input": "0",
             "output": "How many times should I loop? ",
             "comparison": "exact",
             "timeout": 10,
@@ -23,8 +23,8 @@
         {
             "name": "Checking hello for n == 1",
             "setup": "",
-            "run": "echo 1 | python3 src/hello-n.py",
-            "input": "",
+            "run": "python3 src/hello-n.py",
+            "input": "1",
             "output": "How many times should I loop? Hello, World!",
             "comparison": "exact",
             "timeout": 10,
@@ -46,6 +46,16 @@
             "run": "python3 src/do-you-want-to-stop.py; echo",
             "input": "no\nno\nyes\n",
             "output": "Do you want to stop? Do you want to stop? Do you want to stop? ",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running print-1-10.py",
+            "setup": "",
+            "run": "python3 src/do-you-want-to-stop.py; echo",
+            "input": "",
+            "output": "1\n2\n\n3\n4\n5\n6\n7\n8\n9\n10",
             "comparison": "exact",
             "timeout": 10,
             "points": 1
