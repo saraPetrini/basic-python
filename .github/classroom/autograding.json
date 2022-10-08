@@ -83,7 +83,7 @@
         {
             "name": "Running list.py mean",
             "setup": "",
-            "run": "python3 lists.py mean",
+            "run": "python3 src/lists.py mean",
             "input": "1 2 3 4 5",
             "output": "3.0",
             "comparison": "exact",
@@ -93,7 +93,7 @@
         {
             "name": "Running list.py times",
             "setup": "",
-            "run": "python3 lists.py times",
+            "run": "python3 src/lists.py times",
             "input": "1 2 3 4 5",
             "output": "3 6 9 12 15",
             "comparison": "exact",
@@ -103,7 +103,7 @@
         {
             "name": "Running list.py even",
             "setup": "",
-            "run": "python3 lists.py even",
+            "run": "python3 src/lists.py even",
             "input": "1 2 3 4 5",
             "output": "2 4",
             "comparison": "exact",
