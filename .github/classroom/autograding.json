@@ -53,7 +53,7 @@
         {
             "name": "Running print-1-10.py",
             "setup": "python3 src/print-1-10.py > print-1-10.txt",
-            "run": "diff print-1-10.txt .test/expected/print-1-10.txt",
+            "run": "./.test/scripts/cmp.sh print-1-10.txt .test/expected/print-1-10.txt",
             "input": "",
             "output": "",
             "comparison": "exact",
@@ -66,6 +66,46 @@
             "run": "./.test/scripts/cmp.sh print-1-10-growing.txt .test/expected/print-1-10-growing.txt",
             "input": "",
             "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running pattern.py",
+            "setup": "python3 src/pattern.py > pattern.txt",
+            "run": "./.test/scripts/cmp.sh pattern.txt .test/expected/pattern.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py mean",
+            "setup": "",
+            "run": "python3 lists.py mean",
+            "input": "1 2 3 4 5",
+            "output": "3.0",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py times",
+            "setup": "",
+            "run": "python3 lists.py times",
+            "input": "1 2 3 4 5",
+            "output": "3 6 9 12 15",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running list.py even",
+            "setup": "",
+            "run": "python3 lists.py even",
+            "input": "1 2 3 4 5",
+            "output": "2 4",
             "comparison": "exact",
             "timeout": 10,
             "points": 1
