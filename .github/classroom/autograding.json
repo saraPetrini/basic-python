@@ -6,7 +6,7 @@
             "run": "python3 src/hello.py",
             "input": "",
             "output": "Hello, World!",
-            "comparison": "included",
+            "comparison": "exact",
             "timeout": 10,
             "points": 1
         },
@@ -16,7 +16,7 @@
             "run": "echo 0 | python3 src/hello-n.py",
             "input": "",
             "output": "How many times should I loop? ",
-            "comparison": "included",
+            "comparison": "exact",
             "timeout": 10,
             "points": 1
         },
@@ -26,27 +26,27 @@
             "run": "echo 1 | python3 src/hello-n.py",
             "input": "",
             "output": "How many times should I loop? Hello, World!",
-            "comparison": "included",
+            "comparison": "exact",
             "timeout": 10,
             "points": 1
         },
         {
             "name": "Checking hello for n == 2",
             "setup": "",
-            "run": "echo 2 | python3 src/hello-n.py",
-            "input": "",
+            "run": "python3 src/hello-n.py",
+            "input": "2",
             "output": "How many times should I loop? Hello, World!\nHello, World!",
-            "comparison": "included",
+            "comparison": "exact",
             "timeout": 10,
             "points": 1
         },
         {
             "name": "Checking do-you-want-to-stop.py",
             "setup": "",
-            "run": "printf 'no\nno\nyes\n' | python3 src/do-you-want-to-stop.py; echo",
-            "input": "",
+            "run": "python3 src/do-you-want-to-stop.py; echo",
+            "input": "no\nno\nyes\n",
             "output": "Do you want to stop? Do you want to stop? Do you want to stop? ",
-            "comparison": "included",
+            "comparison": "exact",
             "timeout": 10,
             "points": 1
         }
