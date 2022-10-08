@@ -63,7 +63,7 @@
         {
             "name": "Running print-1-10-growing.py",
             "setup": "python3 src/print-1-10-growing.py > print-1-10-growing.txt",
-            "run": "./test/scripts/cmp.sh print-1-10-growing.txt .test/expected/print-1-10-growing.txt",
+            "run": "./.test/scripts/cmp.sh print-1-10-growing.txt .test/expected/print-1-10-growing.txt",
             "input": "",
             "output": "",
             "comparison": "exact",
