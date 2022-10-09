@@ -112,9 +112,9 @@
         },
         {
             "name": "Running counts.py",
-            "setup": "python3 src/counts.py > count.txt",
+            "setup": "echo foobar | python3 src/counts.py > count.txt",
             "run": "./.test/scripts/cmp.sh count.txt .test/expected/count.txt",
-            "input": "foobar",
+            "input": "",
             "output": "",
             "comparison": "exact",
             "timeout": 10,
