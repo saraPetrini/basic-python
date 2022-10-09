@@ -109,6 +109,36 @@
             "comparison": "exact",
             "timeout": 10,
             "points": 1
+        },
+        {
+            "name": "Running count.py",
+            "setup": "python3 src/count.py > count.txt",
+            "run": "./.test/scripts/cmp.sh count.txt .test/expected/count.txt",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running password 'foobar'",
+            "setup": "",
+            "run": "python3 src/password.py foobar",
+            "input": "",
+            "output": "False",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running password 'Foob@r1'",
+            "setup": "",
+            "run": "python3 src/password.py Foob@r1",
+            "input": "",
+            "output": "True",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
         }
     ]
 }

@@ -11,36 +11,6 @@ runs:
         uses: education/autograding@v1
 
       - run: |
-          echo Running pattern.py
-          diff <(cat <<EOF
-          *
-          * *
-          * * *
-          * * * *
-          * * * * *
-          * * * *
-          * * *
-          * *
-          *
-          EOF) <(python3 src/pattern.py)
-        shell: bash
-
-      - run: |
-          echo Running lists.py mean
-          diff <(echo 3.0) <(echo 1 2 3 4 5 | python3 src/lists.py mean)
-        shell: bash
-
-      - run: |
-          echo Running lists.py times
-          diff <(echo 3 6 9 12 15) <(echo 1 2 3 4 5 | python3 src/lists.py times)
-        shell: bash
-
-      - run: |
-          echo Running lists.py even
-          diff <(echo 2 4) <(echo 1 2 3 4 5 | python3 src/lists.py even)
-        shell: bash
-
-      - run: |
           echo Running count.py
           diff <(cat <<EOF
           a: 1
