@@ -139,6 +139,26 @@
             "comparison": "exact",
             "timeout": 10,
             "points": 1
+        },
+        {
+            "name": "Running hex encoding of 'foobar'",
+            "setup": "",
+            "run": "python3 src/hex.py encode foobar",
+            "input": "",
+            "output": "0x660x6f0x6f0x620x610x72",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
+        },
+        {
+            "name": "Running hex decoding of '0x660x6f0x6f0x620x610x72'",
+            "setup": "",
+            "run": "python3 src/hex.py decode 0x660x6f0x6f0x620x610x72",
+            "input": "",
+            "output": "foobar",
+            "comparison": "exact",
+            "timeout": 10,
+            "points": 1
         }
     ]
 }
