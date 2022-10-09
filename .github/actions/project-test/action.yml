@@ -1,7 +1,3 @@
-## FIXME: move these tests to a script where we can give
-# propert feedback. The result of this is a little too
-# hard to decode on GitHub.
-
 name: Project specific tests
 description: Run project specific tests
 runs:
