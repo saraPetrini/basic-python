@@ -114,7 +114,7 @@
             "name": "Running counts.py",
             "setup": "python3 src/counts.py > count.txt",
             "run": "./.test/scripts/cmp.sh count.txt .test/expected/count.txt",
-            "input": "",
+            "input": "foobar",
             "output": "",
             "comparison": "exact",
             "timeout": 10,
