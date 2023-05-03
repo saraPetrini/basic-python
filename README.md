@@ -2,7 +2,7 @@
 
 Below you will find programming exercises of increasing complexity. Each exercise has a corresponding Python file in the `src/` directory that you should modify.
 
-Do not worry if you do not get through all of the exercises. I have tried to cover a wide range of difficulties, so there is a challenge for those who have never programmed before and those who already have some experience. Make it as far as you can, and don't sweat it if it isn't everything.
+Do not worry if you do not get through all of the exercises. We have tried to cover a wide range of difficulties, so there is a challenge for those who have never programmed before and those who already have some experience. Make it as far as you can, and don't sweat it if it isn't everything.
 
 Give each exercise a go, though, because sometimes you can get stuck on a medium-hard problem and still handle a harder one, simply because the difficulty is highly subjective.
 
