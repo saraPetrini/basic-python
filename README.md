@@ -28,8 +28,6 @@ n = int(input("How many times should I loop? "))
 
 Now write a loop that prints "Hello, World!" `n` times. You choose if you prefer a `for`- or a `while`-loop.
 
-When you are done, you can check if the test script on GitHub agrees by committing and pushing, then checking the test on your `Feedback` pull request.
-
 
 ### Exercise
 
@@ -40,8 +38,6 @@ input('Do you want to stop? ')
 ```
 
 Write a `while`-loop that asks the use if you should stop in each iteration, and make it stop if the user answers `'yes'`. Remember that you can tell Python to stop iterating with the keyword `break`.
-
-When you are done, you can check the test on your pull request (but mind you that it is only considering the program correct if it is getting *exactly* the same output, including spaces and newlines).
 
 ### Exercise
 
@@ -87,8 +83,6 @@ Write a program to construct the following pattern:
 (there are no spaces at the end of the lines, but there are between the `'*'`).
 
 Create a new file for it, `src/pattern.py`. On GitHub, there is a test waiting for the new Python program.
-
-
 
 ## Lists
 
