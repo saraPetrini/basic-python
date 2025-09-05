@@ -7,4 +7,7 @@ while (not stop):
     print("inside")
     stop = (input('Do you want to stop? yes or no')) == "yes"
 
+
+
+
 print("out")
