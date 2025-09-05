@@ -14,7 +14,8 @@ x = x.replace("\n", "")
 count = {}
 # Count the characters in `x`` and put the counts in `counts`.
 # Your code goes here.
-
+for i in x:
+    count[i] = count.get(i, 0) + 1
 
 # Get the keys, i.e., the characters, in sorted order
 # and print the count
